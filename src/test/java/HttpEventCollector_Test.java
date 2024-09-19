@@ -20,6 +20,7 @@ import ch.qos.logback.core.joran.spi.JoranException;
 import com.splunk.logging.HttpEventCollectorErrorHandler;
 import com.splunk.logging.HttpEventCollectorEventInfo;
 import org.junit.Assert;
+import org.junit.ClassRule;
 import org.junit.Test;
 
 import java.io.*;
@@ -33,6 +34,9 @@ import com.splunk.*;
 import org.slf4j.*;
 
 public class HttpEventCollector_Test {
+    @ClassRule
+    public static final SplunkTestContainerRule TEST_CONTAINER = new SplunkTestContainerRule();
+
     public static void addPath(String s) throws Exception {
         File f = new File(s);
         URI u = f.toURI();

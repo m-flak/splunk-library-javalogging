@@ -20,6 +20,7 @@ import com.splunk.logging.HttpEventCollectorErrorHandler;
 import com.splunk.logging.HttpEventCollectorEventInfo;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Assert;
+import org.junit.ClassRule;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,6 +31,8 @@ import java.util.HashMap;
 import java.util.List;
 
 public final class HttpEventCollector_LogbackTest {
+    @ClassRule
+    public static final SplunkTestContainerRule TEST_CONTAINER = new SplunkTestContainerRule();
 
     private String httpEventCollectorName = "LogbackTest";
     List<List<HttpEventCollectorEventInfo>> errors = new ArrayList<>();

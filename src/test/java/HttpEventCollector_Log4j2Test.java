@@ -22,6 +22,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.core.LoggerContext;
 import org.junit.Assert;
+import org.junit.ClassRule;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -30,6 +31,9 @@ import java.util.HashMap;
 import java.util.List;
 
 public final class HttpEventCollector_Log4j2Test {
+    @ClassRule
+    public static final SplunkTestContainerRule TEST_CONTAINER = new SplunkTestContainerRule();
+
     private String httpEventCollectorName = "Log4j2Test";
     final List<List<HttpEventCollectorEventInfo>> errors = new ArrayList<>();
     final List<Exception> logEx = new ArrayList<>();

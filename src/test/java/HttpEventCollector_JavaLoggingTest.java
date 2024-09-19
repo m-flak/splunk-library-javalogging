@@ -20,6 +20,7 @@ import com.splunk.logging.HttpEventCollectorErrorHandler;
 import com.splunk.logging.HttpEventCollectorEventInfo;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Assert;
+import org.junit.ClassRule;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -30,6 +31,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public final class HttpEventCollector_JavaLoggingTest {
+    @ClassRule
+    public static final SplunkTestContainerRule TEST_CONTAINER = new SplunkTestContainerRule();
 
     private String httpEventCollectorName = "JavaLoggingTest";
     List<List<HttpEventCollectorEventInfo>> errors = new ArrayList<List<HttpEventCollectorEventInfo>>();
