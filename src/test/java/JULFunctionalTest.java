@@ -14,7 +14,6 @@
  * under the License.
  */
 import org.junit.Assert;
-import org.junit.ClassRule;
 import org.junit.Test;
 
 import java.io.BufferedReader;
@@ -26,8 +25,6 @@ import java.net.Socket;
 import java.util.logging.Logger;
 
 public class JULFunctionalTest {
-    @ClassRule
-    public static final SplunkTestContainerRule TEST_CONTAINER = new SplunkTestContainerRule();
 
     /**
      * Try writing a message via TCP to java.util.logging to validate the example configuration.

@@ -19,7 +19,6 @@
 import com.splunk.logging.HttpEventCollectorErrorHandler;
 import com.splunk.logging.HttpEventCollectorEventInfo;
 import org.junit.Assert;
-import org.junit.ClassRule;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
@@ -29,9 +28,6 @@ import java.util.List;
 import java.util.logging.LogManager;
 
 public class HttpEventCollectorUnitTest {
-    @ClassRule
-    public static final SplunkTestContainerRule TEST_CONTAINER = new SplunkTestContainerRule();
-
     @Test
     public void log4j_simple() throws Exception {
         HashMap<String, String> userInputs = new HashMap<String, String>();

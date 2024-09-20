@@ -12,7 +12,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SplunkTestContainerRule implements TestRule {
+public class TestRuleSplunkContainer implements TestRule {
     @Override
     public Statement apply(Statement base, Description description) {
         try (

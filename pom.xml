@@ -126,7 +126,7 @@
                         <version>2.22.2</version>
                         <configuration>
                             <includes>
-                                <include>**/HttpEventCollector_*.class</include>
+                                <include>**/TestSuiteAcceptanceTests.class</include>
                             </includes>
                         </configuration>
                     </plugin>
@@ -160,7 +160,7 @@
                         <version>2.22.2</version>
                         <configuration>
                             <includes>
-                                <include>**/HttpLoggerStressTest.class</include>
+                                <include>**/TestSuiteStressTests.class</include>
                             </includes>
                         </configuration>
                     </plugin>
