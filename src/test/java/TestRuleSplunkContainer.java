@@ -13,10 +13,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TestRuleSplunkContainer implements TestRule {
+    // Allow choosing image version from CI
+    private static String dockerImageName() {
+        String version = System.getenv().getOrDefault("USE_IMAGE_VERSION", "latest");
+        return String.join(
+                ":",
+                "splunk/splunk",
+                version);
+    }
+
     @Override
     public Statement apply(Statement base, Description description) {
         try (
-                GenericContainer<?> splunk = new FixedHostPortGenericContainer<>("splunk/splunk:latest")
+                GenericContainer<?> splunk = new FixedHostPortGenericContainer<>(dockerImageName())
                         .withFixedExposedPort(8000, 8000)
                         .withFixedExposedPort(5555, 5555)
                         .withFixedExposedPort(8088, 8088)
